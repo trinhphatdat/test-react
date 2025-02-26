@@ -25,7 +25,6 @@ class UserInfo extends React.Component {
 
     render() {
         return (
-
             <div>
                 my name is {this.state.name} and i'm {this.state.age}
                 {/* <button onClick={(event) => { this.handleClick(event) }}>Click me</button> */}
