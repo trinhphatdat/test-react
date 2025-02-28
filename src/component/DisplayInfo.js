@@ -4,7 +4,7 @@ class DisplayInfo extends React.Component {
     state = {
         isShowListUser: true,
     }
-    handleShowHide = () => {
+    handleShowOrHide = () => {
         this.setState({
             isShowListUser: !this.state.isShowListUser,
         });
@@ -18,10 +18,10 @@ class DisplayInfo extends React.Component {
             <div>
                 {/* button */}
                 <div>
-                    <button onClick={() => { this.handleShowHide() }}>
+                    <button onClick={() => { this.handleShowOrHide() }}>
                         {this.state.isShowListUser ? 'Hide' : 'Show'} List User
                     </button>
-                </div>
+                </div> <br />
                 {/* render list user */}
                 {this.state.isShowListUser &&
                     <div>
