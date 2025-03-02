@@ -15,7 +15,6 @@ class MyComponent extends React.Component {
     }
 
     handleAddNewUser = (userObj) => {
-        console.log(userObj);
         this.setState({
             listUser: [userObj, ...this.state.listUser],
         })

@@ -10,27 +10,29 @@ class AddUserInfo extends React.Component {
 
     handleOnChangeInput = (e) => {
         this.setState({
-            name: e.target.value,
+            name: e.target.value, //target.value: lấy giá trị được nhập trong ô input
         });
     }
     handleOnChangeAge = (e) => {
         this.setState({
-            age: e.target.value,
+            age: e.target.value, //target.value: lấy giá trị được nhập trong ô input
         });
     }
+
     handleOnSubmit = (e) => {
         e.preventDefault();
         this.props.handleAddNewUser({
             id: Math.floor((Math.random() * 100) + 1) + 'random',
             name: this.state.name,
             age: this.state.age,
-        });
+        }) //...setState, add user
     }
 
     render() {
         return (
             <div>
-                my name is {this.state.name} and i'm {this.state.age}
+                {/* my name is {this.state.name} and i'm {this.state.age} */}
+
                 {/* <button onClick={(event) => { this.handleClick(event) }}>Click me</button> */}
                 {/* <button onClick={this.handleClick}>Click me</button> */}
                 {/* <button onMouseOver={this.handleOnMouseOver}>Hover me</button> */}
