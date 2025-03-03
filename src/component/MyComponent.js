@@ -7,7 +7,7 @@ import DisplayInfo from "./DisplayInfo";
 
 class MyComponent extends React.Component {
     state = {
-        listUser: [
+        listUsers: [
             { id: 1, name: "DKID", age: 18 },
             { id: 2, name: "KIDTRINH", age: 19 },
             { id: 3, name: "Dat", age: 20 },
@@ -16,7 +16,18 @@ class MyComponent extends React.Component {
 
     handleAddNewUser = (userObj) => {
         this.setState({
-            listUser: [userObj, ...this.state.listUser],
+            listUsers: [userObj, ...this.state.listUsers],
+        })
+    }
+
+    handleDeleteUser = (userId) => {
+        // let listUsersClone = [...this.state];
+        let listUsersClone = this.state.listUsers;
+        listUsersClone = listUsersClone.filter((item) => {
+            return item.id !== userId
+        })
+        this.setState({
+            listUsers: listUsersClone
         })
     }
 
@@ -27,7 +38,10 @@ class MyComponent extends React.Component {
                     <AddUserInfo handleAddNewUser={this.handleAddNewUser} />
                     <br />
                     <br />
-                    <DisplayInfo listUser={this.state.listUser} />
+                    <DisplayInfo
+                        listUser={this.state.listUsers}
+                        handleDeleteUser={this.handleDeleteUser}
+                    />
                 </div>
                 <div className="b">
 
