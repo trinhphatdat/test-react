@@ -56,6 +56,7 @@ const AddUserInfo = (props) => {
         setAge(e.target.value) //target.value: lấy giá trị được nhập trong ô input
     }
 
+    //Add 1 user
     const handleOnSubmit = (e) => {
         e.preventDefault();
         props.handleAddNewUser({

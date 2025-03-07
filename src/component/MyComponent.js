@@ -61,14 +61,10 @@ const MyComponent = (props) => {
     );
 
     const handleAddNewUser = (userObj) => {
-        // this.setState({
-        //     listUsers: [userObj, ...listUsers],
-        // })
         setListUsers([userObj, ...listUsers])
     }
 
     const handleDeleteUser = (userId) => {
-        // let listUsersClone = [...this.state];
         let listUsersClone = listUsers;
         listUsersClone = listUsersClone.filter((item) => {
             return item.id !== userId
@@ -83,7 +79,7 @@ const MyComponent = (props) => {
                 <br />
                 <br />
                 <DisplayInfo
-                    listUser={listUsers}
+                    listUsers={listUsers}
                     handleDeleteUser={handleDeleteUser}
                 />
             </div>
